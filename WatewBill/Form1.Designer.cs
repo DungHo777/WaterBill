@@ -30,10 +30,11 @@
         {
             panel1 = new Panel();
             ExitMenuButton = new Button();
-            ManagelnvoicesMenuButton = new Button();
-            AddInvoideMenuButton = new Button();
+            ManageInvoicesMenuButton = new Button();
+            AddInvoiceMenuButton = new Button();
             pictureBox1 = new PictureBox();
-            AddInvioceUserControl = new AddInvioceUserControl();
+            AddInvoiceUserControl = new AddInvioceUserControl();
+            manageInvoicesUserControl = new WaterBill.ManageInvoicesUserControl();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
@@ -42,8 +43,8 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(ExitMenuButton);
-            panel1.Controls.Add(ManagelnvoicesMenuButton);
-            panel1.Controls.Add(AddInvoideMenuButton);
+            panel1.Controls.Add(ManageInvoicesMenuButton);
+            panel1.Controls.Add(AddInvoiceMenuButton);
             panel1.Location = new Point(0, 167);
             panel1.Name = "panel1";
             panel1.Size = new Size(503, 898);
@@ -59,28 +60,29 @@
             ExitMenuButton.UseVisualStyleBackColor = true;
             ExitMenuButton.Click += ExitMenuButton_Click;
             // 
-            // ManagelnvoicesMenuButton
+            // ManageInvoicesMenuButton
             // 
-            ManagelnvoicesMenuButton.Location = new Point(-13, 94);
-            ManagelnvoicesMenuButton.Name = "ManagelnvoicesMenuButton";
-            ManagelnvoicesMenuButton.Size = new Size(513, 101);
-            ManagelnvoicesMenuButton.TabIndex = 1;
-            ManagelnvoicesMenuButton.Text = "Manage Invoices";
-            ManagelnvoicesMenuButton.UseVisualStyleBackColor = true;
+            ManageInvoicesMenuButton.Location = new Point(0, 90);
+            ManageInvoicesMenuButton.Name = "ManageInvoicesMenuButton";
+            ManageInvoicesMenuButton.Size = new Size(513, 101);
+            ManageInvoicesMenuButton.TabIndex = 1;
+            ManageInvoicesMenuButton.Text = "Manage Invoices";
+            ManageInvoicesMenuButton.UseVisualStyleBackColor = true;
+            ManageInvoicesMenuButton.Click += ManagelnvoicesMenuButton_Click;
             // 
-            // AddInvoideMenuButton
+            // AddInvoiceMenuButton
             // 
-            AddInvoideMenuButton.Location = new Point(-13, -11);
-            AddInvoideMenuButton.Name = "AddInvoideMenuButton";
-            AddInvoideMenuButton.Size = new Size(513, 106);
-            AddInvoideMenuButton.TabIndex = 0;
-            AddInvoideMenuButton.Text = "Add Invoice";
-            AddInvoideMenuButton.UseVisualStyleBackColor = true;
-            AddInvoideMenuButton.Click += AddInvoideMenuButton_Click;
+            AddInvoiceMenuButton.Location = new Point(-13, -11);
+            AddInvoiceMenuButton.Name = "AddInvoiceMenuButton";
+            AddInvoiceMenuButton.Size = new Size(513, 106);
+            AddInvoiceMenuButton.TabIndex = 0;
+            AddInvoiceMenuButton.Text = "Add Invoice";
+            AddInvoiceMenuButton.UseVisualStyleBackColor = true;
+            AddInvoiceMenuButton.Click += AddInvoideMenuButton_Click;
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.Screenshot_2025_03_28_125056;
+            pictureBox1.BackgroundImage = WaterBill.Properties.Resources.Screenshot_2025_03_28_125056;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.Location = new Point(0, -40);
             pictureBox1.Name = "pictureBox1";
@@ -88,21 +90,29 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // AddInvioceUserControl
+            // AddInvoiceUserControl
             // 
-            AddInvioceUserControl.Location = new Point(494, 1);
-            AddInvioceUserControl.Name = "AddInvioceUserControl";
-            AddInvioceUserControl.Size = new Size(889, 1064);
-            AddInvioceUserControl.TabIndex = 2;
-            AddInvioceUserControl.Load += addInvioceUserControl1_Load;
+            AddInvoiceUserControl.Location = new Point(494, 1);
+            AddInvoiceUserControl.Name = "AddInvoiceUserControl";
+            AddInvoiceUserControl.Size = new Size(877, 1064);
+            AddInvoiceUserControl.TabIndex = 2;
+            AddInvoiceUserControl.Load += addInvioceUserControl1_Load;
+            // 
+            // manageInvoicesUserControl
+            // 
+            manageInvoicesUserControl.Location = new Point(483, 75);
+            manageInvoicesUserControl.Name = "manageInvoicesUserControl";
+            manageInvoicesUserControl.Size = new Size(1782, 931);
+            manageInvoicesUserControl.TabIndex = 3;
+            manageInvoicesUserControl.Load += manageInvoicesUserControl1_Load;
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Screenshot_2025_03_28_140008;
-            ClientSize = new Size(1383, 1064);
-            Controls.Add(AddInvioceUserControl);
+            ClientSize = new Size(2263, 1064);
+            Controls.Add(manageInvoicesUserControl);
+            Controls.Add(AddInvoiceUserControl);
             Controls.Add(pictureBox1);
             Controls.Add(panel1);
             Name = "Form1";
@@ -115,10 +125,11 @@
         #endregion
 
         private Panel panel1;
-        private Button ManagelnvoicesMenuButton;
-        private Button AddInvoideMenuButton;
+        private Button ManageInvoicesMenuButton;
+        private Button AddInvoiceMenuButton;
         private PictureBox pictureBox1;
         private Button ExitMenuButton;
-        private AddInvioceUserControl AddInvioceUserControl;
+        private AddInvioceUserControl AddInvoiceUserControl;
+        private WaterBill.ManageInvoicesUserControl manageInvoicesUserControl;
     }
 }

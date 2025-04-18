@@ -36,9 +36,9 @@
             label6 = new Label();
             label7 = new Label();
             CustomerIDInput = new TextBox();
-            ThisMothInput = new TextBox();
+            ThisMonthInput = new TextBox();
             CustomerNameInput = new TextBox();
-            LastMothInput = new TextBox();
+            LastMonthInput = new TextBox();
             NumberofPeople = new TextBox();
             typeofCustomerInput = new ComboBox();
             button1 = new Button();
@@ -46,9 +46,10 @@
             label9 = new Label();
             label10 = new Label();
             label11 = new Label();
-            label12 = new Label();
-            label13 = new Label();
-            label14 = new Label();
+            resultEnvFee = new Label();
+            resultSubtotal = new Label();
+            resultTotal = new Label();
+            resultVATFee = new Label();
             SuspendLayout();
             // 
             // label1
@@ -132,12 +133,12 @@
             CustomerIDInput.Size = new Size(286, 47);
             CustomerIDInput.TabIndex = 7;
             // 
-            // ThisMothInput
+            // ThisMonthInput
             // 
-            ThisMothInput.Location = new Point(41, 265);
-            ThisMothInput.Name = "ThisMothInput";
-            ThisMothInput.Size = new Size(286, 47);
-            ThisMothInput.TabIndex = 7;
+            ThisMonthInput.Location = new Point(41, 265);
+            ThisMonthInput.Name = "ThisMonthInput";
+            ThisMonthInput.Size = new Size(286, 47);
+            ThisMonthInput.TabIndex = 7;
             // 
             // CustomerNameInput
             // 
@@ -146,12 +147,12 @@
             CustomerNameInput.Size = new Size(274, 47);
             CustomerNameInput.TabIndex = 7;
             // 
-            // LastMothInput
+            // LastMonthInput
             // 
-            LastMothInput.Location = new Point(413, 265);
-            LastMothInput.Name = "LastMothInput";
-            LastMothInput.Size = new Size(274, 47);
-            LastMothInput.TabIndex = 7;
+            LastMonthInput.Location = new Point(413, 265);
+            LastMonthInput.Name = "LastMonthInput";
+            LastMonthInput.Size = new Size(274, 47);
+            LastMonthInput.TabIndex = 7;
             // 
             // NumberofPeople
             // 
@@ -197,7 +198,7 @@
             label9.Name = "label9";
             label9.Size = new Size(126, 41);
             label9.TabIndex = 10;
-            label9.Text = "Evn Fee:";
+            label9.Text = "Env Fee:";
             // 
             // label10
             // 
@@ -218,47 +219,56 @@
             label11.TabIndex = 10;
             label11.Text = "Total:";
             // 
-            // label12
+            // resultEnvFee
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(198, 477);
-            label12.Name = "label12";
-            label12.Size = new Size(0, 41);
-            label12.TabIndex = 10;
+            resultEnvFee.AutoSize = true;
+            resultEnvFee.Location = new Point(198, 477);
+            resultEnvFee.Name = "resultEnvFee";
+            resultEnvFee.Size = new Size(0, 41);
+            resultEnvFee.TabIndex = 10;
             // 
-            // label13
+            // resultSubtotal
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(198, 535);
-            label13.Name = "label13";
-            label13.Size = new Size(0, 41);
-            label13.TabIndex = 10;
+            resultSubtotal.AutoSize = true;
+            resultSubtotal.Location = new Point(198, 535);
+            resultSubtotal.Name = "resultSubtotal";
+            resultSubtotal.Size = new Size(0, 41);
+            resultSubtotal.TabIndex = 10;
             // 
-            // label14
+            // resultTotal
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(198, 587);
-            label14.Name = "label14";
-            label14.Size = new Size(0, 41);
-            label14.TabIndex = 10;
+            resultTotal.AutoSize = true;
+            resultTotal.Location = new Point(198, 587);
+            resultTotal.Name = "resultTotal";
+            resultTotal.Size = new Size(0, 41);
+            resultTotal.TabIndex = 10;
+            // 
+            // resultVATFee
+            // 
+            resultVATFee.AutoSize = true;
+            resultVATFee.Location = new Point(198, 639);
+            resultVATFee.Name = "resultVATFee";
+            resultVATFee.Size = new Size(0, 41);
+            resultVATFee.TabIndex = 11;
             // 
             // AddInvioceUserControl
             // 
             AutoScaleDimensions = new SizeF(17F, 41F);
             AutoScaleMode = AutoScaleMode.Font;
+            Controls.Add(resultVATFee);
             Controls.Add(label11);
             Controls.Add(label10);
             Controls.Add(label9);
-            Controls.Add(label14);
-            Controls.Add(label13);
-            Controls.Add(label12);
+            Controls.Add(resultTotal);
+            Controls.Add(resultSubtotal);
+            Controls.Add(resultEnvFee);
             Controls.Add(label8);
             Controls.Add(button1);
             Controls.Add(typeofCustomerInput);
             Controls.Add(NumberofPeople);
             Controls.Add(CustomerNameInput);
-            Controls.Add(LastMothInput);
-            Controls.Add(ThisMothInput);
+            Controls.Add(LastMonthInput);
+            Controls.Add(ThisMonthInput);
             Controls.Add(CustomerIDInput);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -269,6 +279,7 @@
             Controls.Add(label1);
             Name = "AddInvioceUserControl";
             Size = new Size(762, 707);
+            Load += AddInvioceUserControl_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -283,9 +294,9 @@
         private Label label6;
         private Label label7;
         private TextBox CustomerIDInput;
-        private TextBox ThisMothInput;
+        private TextBox ThisMonthInput;
         private TextBox CustomerNameInput;
-        private TextBox LastMothInput;
+        private TextBox LastMonthInput;
         private TextBox NumberofPeople;
         private ComboBox typeofCustomerInput;
         private Button button1;
@@ -293,8 +304,9 @@
         private Label label9;
         private Label label10;
         private Label label11;
-        private Label label12;
-        private Label label13;
-        private Label label14;
+        private Label resultEnvFee;
+        private Label resultSubtotal;
+        private Label resultTotal;
+        private Label resultVATFee;
     }
 }
